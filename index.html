@@ -6,16 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style2.css">
     <title>WELCOME</title>
+    <style type="text/css">
+        .mobileHide { display: inline;}
+        /* Smartphone Portrait and Landscape */
+        @media only screen
+        and (min-device-width : 320px)
+        and (max-device-width : 480px){  .mobileHide { display: none;}}
+     </style>
 </head>
 <body>
-    
-    <header class="welcome">
-        <div class="site-branding">
-                <p class="site-title">
-                    <a href="./main.html" id="HOME"><span id="the-commu1">BERGMAN WESTWOOD</span></a><br><span class="location" id="studio-ker1">LOS ANGELES<br/>LONDON
-                    </span></p>
-        </div>
-    </header>
-   
+    <div class="mobileHide">
+
+        <header class="welcome">
+            <div class="site-branding">
+                    <p class="site-title">
+                        <a href="./main.html" id="HOME"><span id="the-commu1">BERGMAN WESTWOOD</span></a><br><span class="location" id="studio-ker1">LOS ANGELES<br/>LONDON
+                        </span></p>
+            </div>
+        </header>
+
+    </div>
+
 </body>
 </html>
