@@ -19,9 +19,37 @@
         and (min-device-width : 320px)
         and (max-device-width : 480px){ .mobileShow { display: inline;}}
      </style>
+         <script type="text/javascript"> 
+            function display_c(){
+            var refresh=1000; // Refresh rate in milli seconds
+            mytime=setTimeout('display_ct()',refresh)
+            }
+            
+            function display_ct() {
+            var x = new Date();
+            var minutes=x.getMinutes().toString()
+            minutes=minutes.length==1 ? 0+minutes : minutes;
+            var seconds=x.getSeconds().toString()
+            seconds=seconds.length==1 ? 0+seconds : seconds;
+            var ampm = x.getHours( ) >= 12 ? ' PM' : ' AM';
+            hours = x.getHours( ) % 12;
+            hours = hours ? hours : 12;
+            hours=hours.toString().length==1? 0+hours.toString() : hours;
+            var c = x.getDate().toString();
+            c = c.length==1 ? 0+c : c;
+            var p = x.getUTCMonth() + 1;
+            var d = p.toString();
+            d = d.length==1 ? 0+d : d;
+            var e = x.getFullYear();
+            var b = String(hours+":"+minutes+":"+seconds+ampm);
+            document.getElementById('ct').innerHTML = b;
+            display_c();
+            }
+    
+            </script>
 </head>
 <body>
-    <div class="mobileShow">
+    <div class="mobileShow" onload=display_ct();>
         <div class="project-title-container">
         <span class="cat-title" id="cat-trigger-accessories">
             BERGMAN WESTWOOD        </span>
